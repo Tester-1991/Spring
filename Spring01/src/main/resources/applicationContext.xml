@@ -3,4 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="userDao" class="com.shiyan.spring01.dao.impl.UserDaoImpl"></bean>
+    <bean id="userDao2" class="com.shiyan.spring01.factory.StaticFactory" factory-method="getUserDao"></bean>
+
+    <bean id="factory" class="com.shiyan.spring01.factory.DynamicFactory"></bean>
+    <bean id="userDao3" factory-bean="factory" factory-method="getUserDao"></bean>
 </beans>
